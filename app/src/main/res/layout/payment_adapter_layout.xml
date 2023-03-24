@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/fullpaymentLayout"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/curve_corner_less"
+    android:backgroundTint="@color/is_light_blue">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/rubik_light"
+    android:textColor="@color/is_dark_blue"
+    android:id="@+id/payment_student_name"
+    android:includeFontPadding="false"
+    android:textSize="20sp"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_bold"
+        android:textColor="@color/is_dark_blue"
+        android:id="@+id/payment_student_grade"
+        android:textSize="15sp"
+        android:includeFontPadding="false"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/rubik"
+        android:textColor="@color/is_dark_blue"
+        android:id="@+id/payment_name"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:includeFontPadding="false"
+        android:textColor="@color/is_dark_blue"
+        android:id="@+id/payment_amount"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:includeFontPadding="false"
+        android:textColor="@color/is_dark_blue"
+        android:id="@+id/payment_schedule_date"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:includeFontPadding="false"
+        android:textColor="@color/is_dark_blue"
+        android:id="@+id/payment_date"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:includeFontPadding="false"
+        android:textColor="@color/is_dark_blue"
+        android:id="@+id/payment_status"
+        android:textSize="14sp"
+        />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/payment_hide">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payment_id"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payment_student_email"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payment_learning_program"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payment_plan_name"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payment_title"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payment_additional_amount"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/is_dark_blue"
+            android:id="@+id/payments_gateway_tool"
+            android:textSize="14sp"
+
+
+            />
+
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expand"
+        android:fontFamily="@font/rubik"
+        android:backgroundTint="@color/dash_gif_blue"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/curve_corner_less"
+        android:id="@+id/button"/>
+
+
+
+
+
+</LinearLayout>
+
+</RelativeLayout>
