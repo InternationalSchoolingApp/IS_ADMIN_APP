@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.SearchTeacher">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="@drawable/curve_corner_less"
+        android:backgroundTint="@color/is_dark_blue"
+        >
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter teacher name..."
+            android:background="@drawable/curve_corner_less"
+            android:backgroundTint="@color/white"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/rubik"
+            android:id="@+id/email_search"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:background="@drawable/curve_corner_less"
+            android:backgroundTint="@color/white"
+            android:layout_below="@+id/email_search"
+            android:layout_marginTop="5dp"
+            android:id="@+id/btn_advance_search"
+            android:alpha="0.8"/>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:id="@+id/searchTeacher"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+       />
+
+
+</LinearLayout>

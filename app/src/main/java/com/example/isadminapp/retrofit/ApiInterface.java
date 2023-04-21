@@ -1,7 +1,11 @@
 package com.example.isadminapp.retrofit;
 
+import com.example.isadminapp.model.ActivateChatModel;
 import com.example.isadminapp.model.AddPaymentStudentSearchModel;
 import com.example.isadminapp.model.AdminProfileModel;
+import com.example.isadminapp.model.AdminProfileViewModel;
+import com.example.isadminapp.model.ChatStatusCheck;
+import com.example.isadminapp.model.ChatWithTeacherModel;
 import com.example.isadminapp.model.DashboardNotificationModel;
 import com.example.isadminapp.model.FirebaseTokenModel;
 import com.example.isadminapp.model.ForgetPasswordModel;
@@ -10,6 +14,7 @@ import com.example.isadminapp.model.ManageSessionModel;
 import com.example.isadminapp.model.ManageUserSearchModel;
 import com.example.isadminapp.model.NotificationForApp;
 import com.example.isadminapp.model.PaymentSearchModel;
+import com.example.isadminapp.model.StudentAvailablityForChatModel;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -74,8 +79,24 @@ public interface ApiInterface {
     @POST("manage-session")
     Call<ManageSessionModel> searchManageSession(@Body ManageSessionModel manageSessionModel);
 
-//
-//    @POST("get-student-progress-report-detail")
-//    Call<SubjectPerformanceDetail> progressBySubject(@Body SubjectPerformanceDetail subjectListPerformance);
+    @POST("app-profile-admin-view")
+    Call<AdminProfileViewModel> adminProfileViewModelCall(@Body AdminProfileViewModel manageSessionModel);
+
+
+    @POST("app-approved-teacher")
+    Call<ChatWithTeacherModel> chatTeacherSearch(@Body ChatWithTeacherModel manageSessionModel);
+
+    @POST("chat-status-check-per-user")
+    Call<ChatStatusCheck> chatStatusCheck(@Body ChatStatusCheck chatStatusCheck);
+
+    @POST("de-activate-admin-for-chat")
+    Call<ActivateChatModel> deactivate(@Body ActivateChatModel activateChatModel);
+
+    @POST("activate-admin-for-chat")
+    Call<ActivateChatModel> activate(@Body ActivateChatModel deactivateChatModel);
+
+    @POST("student-available-for-chat")
+    Call<StudentAvailablityForChatModel> getStudentsForChat(@Body StudentAvailablityForChatModel studentAvailablityForChatModel);
+
 
 }

@@ -1,6 +1,7 @@
-package com.example.isadminapp.model;
+package com.example.isadminapp.adapter;
 
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.isadminapp.R;
+import com.example.isadminapp.activity.AdminProfileViewActivity;
+import com.example.isadminapp.model.ManageUserSearchModel;
 
 import java.util.List;
 
@@ -38,8 +41,12 @@ public class ManageUserSearchAdapter extends RecyclerView.Adapter<ManageUserSear
         holder.userRole.setText(""+list.get(position).getParentUserRole());
         holder.email.setText(""+list.get(position).getEmail());
 
-        holder.layout.setOnClickListener(v->{
+        String userId = String.valueOf(list.get(position).getId());
 
+        holder.layout.setOnClickListener(v->{
+            Intent intent = new Intent(v.getContext(), AdminProfileViewActivity.class);
+            intent.putExtra("userId", userId );
+            v.getContext().startActivity(intent);
         });
 
     }

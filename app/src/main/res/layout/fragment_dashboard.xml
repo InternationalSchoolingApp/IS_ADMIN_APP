@@ -83,6 +83,40 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="20dp"
+                android:background="@drawable/curve_corner_less"
+                android:backgroundTint="@color/is_dark_blue"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Activate Chat"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/rubik"
+                    android:id="@+id/chat_Activity"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Click Here"
+                    android:background="@drawable/curve_corner_less"
+                    android:backgroundTint="@color/white"
+                    android:layout_below="@+id/chat_Activity"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/chat_activity_button"
+                    android:alpha="0.8"/>
+
+
+            </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -124,6 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="20dp"
+                android:visibility="gone"
                 android:background="@drawable/curve_corner_less"
                 android:backgroundTint="@color/is_dark_blue"
                 >

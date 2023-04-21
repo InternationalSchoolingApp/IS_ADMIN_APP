@@ -6,12 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-
-import com.example.isadminapp.R;
-import com.example.isadminapp.adapter.StudentSearchAdapter;
 import com.example.isadminapp.databinding.ActivitySBinding;
-import com.example.isadminapp.model.AddPaymentStudentSearchModel;
-import com.example.isadminapp.model.ManageUserSearchAdapter;
+import com.example.isadminapp.adapter.ManageUserSearchAdapter;
 import com.example.isadminapp.model.ManageUserSearchModel;
 import com.example.isadminapp.retrofit.ApiInterface;
 import com.example.isadminapp.retrofit.RetroFitClient;
@@ -46,7 +42,6 @@ public class S extends AppCompatActivity {
 
         Log.d("TAG", "setListeners: worKing ");
 
-
         binding.btnAdvanceSearch.setOnClickListener(v -> {
             Log.d("TAG", "btn: worKing ");
 
@@ -70,7 +65,6 @@ public class S extends AppCompatActivity {
 
     private void search(String name, String email) {
 
-        Toast.makeText(this, "in Method", Toast.LENGTH_SHORT).show();
 
         ManageUserSearchModel manageUserSearchModel = new ManageUserSearchModel(email, name, 1);
         ApiInterface apiInterface = RetroFitClient.getRetrofit().create(ApiInterface.class);

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/is_light_blue"
-    android:theme="@style/AppTheme"
-    tools:context=".activity.WatchChatActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:theme="@style/ThemeOverlay.ISADMINAPP.FullscreenContainer"
+    tools:context=".activity.ChatTeacherActivity">
 
     <View
         android:id="@+id/view_background"
@@ -56,21 +56,18 @@
         android:src="@drawable/back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/Chat_info_button"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:visibility="gone"
         android:layout_margin="15dp"
         app:tint="@color/black"
         android:src="@drawable/ic_baseline_info_24"
         android:tint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         />
 
     <FrameLayout
@@ -82,11 +79,11 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_baseline_send_24" />
     </FrameLayout>
+
     <View android:layout_height="1dp"
         android:layout_width="match_parent"
         android:id="@+id/viewSupporter"
@@ -133,7 +130,6 @@ android:visibility="gone"
 
 
     <EditText
-        android:visibility="gone"
         android:id="@+id/chat_edittext"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -152,6 +148,7 @@ android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/send_button_chat"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

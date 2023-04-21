@@ -7,11 +7,24 @@ public class Constants {
     public static final String ROLE = "roleType";
     public static final String STUDENT_ROLE = "STUDENT";
     public static final String TEACHER_ROLE = "TEACHER";
+
+    public static final String USER_ID_FIREBASE = "userIdFirebase";
+    public static final String KEY_COLLECTION_CHAT_ADMIN = "CHAT_ADMIN";
     public static final String ADMIN_ROLE = "ADMIN";
     public static final String NAME = "name";
     public static final String PLATFORM_ID = "platformId";
     public static final String TEACHER_ID = "teacherId";
     public static final String STUDENT_ID = "studentId";
+
+
+
+    public static final String ADMIN_ID = "adminId";
+    public static final String ADMIN_EMAIL = "adminEmail";
+    public static final String ADMIN_NAME = "adminName";
+
+
+
+
     public static final String SCHOOL_ID = "schoolId";
     public static final String PREFERENCE_NAME = "ISAPP";
     public static final String USER_LOGGED = "logged";
@@ -43,7 +56,7 @@ public class Constants {
 
     public static HashMap<String, String> remoteMessageHeaders = null;
     public static HashMap<String, String> getRemoteMessageHeaders(){
-        if (remoteMessageHeaders== null){
+        if (remoteMessageHeaders == null){
             remoteMessageHeaders = new HashMap<>();
             remoteMessageHeaders.put(AUTHORIZATION, "key=AAAAp1ToAyc:APA91bEQ8MZa6IplBbG6QlgvxeJ5joc7W7ylLYdGnK4_KAP8i0rWcYiaiUjnmt2-PdE2gfPqqQaPSXAtzDG0RWqX0PYkL-IZMXBlEG3vGnJwfdAVmPE1t9G7ouYeKZfxrJRZpATl0l8u");
             remoteMessageHeaders.put(CONTENT_TYPE,"application/json");

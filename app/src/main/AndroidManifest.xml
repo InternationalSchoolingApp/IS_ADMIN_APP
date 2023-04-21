@@ -19,6 +19,36 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ChatTeacherActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_chat_teacher"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".activity.ChatStudentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_chat_student"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".activity.SearchStudentForChatActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_search_student_for_chat"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".activity.ChatActivateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_chat_activate"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".activity.SearchTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AdminProfileViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ManageSession"
             android:exported="false" />
         <activity

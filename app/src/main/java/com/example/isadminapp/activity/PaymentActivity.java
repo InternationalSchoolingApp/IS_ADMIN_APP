@@ -43,7 +43,7 @@ public class PaymentActivity extends AppCompatActivity {
     private int endDay = 0;
     private int endMonth = 0;
     private int endYear = 0;
-    private String email;
+    private String name;
     private String sDate;
     private String eDate;
     private ActivityPaymentBinding binding;
@@ -100,9 +100,9 @@ public class PaymentActivity extends AppCompatActivity {
         binding.searchBtn.setOnClickListener(v -> {
 
             if (binding.paymentEmail.getEditText().getText().toString().equals("")) {
-                email = "";
+                name = "";
             } else {
-                email = binding.paymentEmail.getEditText().getText().toString().toLowerCase().trim();
+                name = binding.paymentEmail.getEditText().getText().toString().toLowerCase().trim();
             }
             if (startDate == 1) {
                 startDate = binding.startDate.getDayOfMonth();
@@ -126,7 +126,7 @@ public class PaymentActivity extends AppCompatActivity {
             }
 
 
-            go(sDate, eDate, email);
+            go(sDate, eDate, name);
 
             binding.linearStartDate.setVisibility(View.GONE);
             binding.linearEndDate.setVisibility(View.GONE);
@@ -139,9 +139,9 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
 
-    public void go(String sDate, String eDate, String email) {
+    public void go(String sDate, String eDate, String name) {
 
-        PaymentSearchModel paymentSearchModel = new PaymentSearchModel("54", Collections.EMPTY_LIST, Collections.EMPTY_LIST, "", Collections.EMPTY_LIST, "", "", email, Collections.EMPTY_LIST, Collections.EMPTY_LIST, "", "", Collections.EMPTY_LIST, sDate, eDate, "DESC", "PAY_DATE", "0", "100", "1", "international-schooling", preferenceManager.getInt(Constants.USER_ID).toString());
+        PaymentSearchModel paymentSearchModel = new PaymentSearchModel("54", Collections.EMPTY_LIST, Collections.EMPTY_LIST, "", Collections.EMPTY_LIST, "", name, "", Collections.EMPTY_LIST, Collections.EMPTY_LIST, "", "", Collections.EMPTY_LIST, sDate, eDate, "DESC", "PAY_DATE", "0", "100", "1", "international-schooling", preferenceManager.getInt(Constants.USER_ID).toString());
         ApiInterface apiInterface = RetroFitClient.getRetrofit().create(ApiInterface.class);
         Call<PaymentSearchModel> call = apiInterface.paymentSearch(paymentSearchModel);
         call.enqueue(new Callback<PaymentSearchModel>() {

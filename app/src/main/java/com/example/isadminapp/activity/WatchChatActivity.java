@@ -95,8 +95,7 @@ public class WatchChatActivity extends AppCompatActivity {
                     chatMessage.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
                     chatMessage.time = getReadableDateTime(documentChange.getDocument().getDate(Constants.KEY_TIME_STAMP));
                     chatMessage.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIME_STAMP);
-
-                        chatMessages.add(chatMessage);
+                    chatMessages.add(chatMessage);
 
 
                 }

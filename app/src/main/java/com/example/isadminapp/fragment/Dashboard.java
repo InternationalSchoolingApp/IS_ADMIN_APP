@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.isadminapp.R;
 import com.example.isadminapp.activity.AddPaymentActivitySearch;
+import com.example.isadminapp.activity.ChatActivateActivity;
 import com.example.isadminapp.activity.ChatSearchActivity;
 import com.example.isadminapp.activity.ManageSession;
 import com.example.isadminapp.activity.PaymentActivity;
@@ -28,7 +29,7 @@ public class Dashboard extends Fragment {
 
     PreferenceManager preferenceManager;
     TextView name , role ;
-    Button advanceSearch, searchUser, checkChat, buttonSession;
+    Button advanceSearch, searchUser, checkChat, buttonSession, chatCheckStatus;
 
 
 
@@ -47,6 +48,13 @@ public class Dashboard extends Fragment {
         searchUser = view.findViewById(R.id.search_button_user);
         checkChat = view.findViewById(R.id.btn_check_chat);
         buttonSession = view.findViewById(R.id.btn_session);
+        chatCheckStatus = view.findViewById(R.id.chat_activity_button);
+
+
+        chatCheckStatus.setOnClickListener(v->{
+            Intent intent = new Intent(v.getContext(), ChatActivateActivity.class);
+            startActivity(intent);
+        });
 
 
         buttonSession.setOnClickListener(v->{
