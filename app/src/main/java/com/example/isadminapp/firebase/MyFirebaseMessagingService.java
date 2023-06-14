@@ -6,16 +6,12 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-
 import com.example.isadminapp.R;
-import com.example.isadminapp.activity.ChatStudentActivity;
 import com.example.isadminapp.activity.ChatWithStudent;
 import com.example.isadminapp.activity.ChatWithTeacher;
 import com.example.isadminapp.constant.Constants;
@@ -23,7 +19,6 @@ import com.example.isadminapp.model.User;
 import com.example.isadminapp.preference.PreferenceManager;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-
 import java.util.Random;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -51,6 +46,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
         if (channelinmessage.equals("TEACHER_ADMIN")){
+
             int notificationId = new Random().nextInt();
             String channelId = "chat_message";
 
@@ -107,11 +103,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
 
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-
                 return;
             }
             notificationManagerCompat.notify(notificationId, builder.build());
-
         }
     }
 

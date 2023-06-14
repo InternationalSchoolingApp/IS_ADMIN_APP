@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.isadminapp.chat.ChatAdapter;
 import com.example.isadminapp.chat.ChatMessage;
 import com.example.isadminapp.constant.Constants;
 import com.example.isadminapp.databinding.ActivityWatchChatBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,7 +34,7 @@ public class WatchChatActivity extends AppCompatActivity {
     private ChatAdapter chatAdapter;
     private FirebaseFirestore database;
     ActivityWatchChatBinding binding;
-    String teacherEmail, studentEmail;
+    String teacherEmail, studentEmail, studentName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,13 @@ public class WatchChatActivity extends AppCompatActivity {
 
     public void init() {
 
+
+        chatMessages = new ArrayList<>();
+        chatAdapter = new ChatAdapter(chatMessages, studentEmail );
+        database = FirebaseFirestore.getInstance();
+        binding.chatContent.setAdapter(chatAdapter);
+
+
         binding.backButtonChat.setOnClickListener(v->{
             onBackPressed();
         });
@@ -53,17 +63,34 @@ public class WatchChatActivity extends AppCompatActivity {
         if (extra != null) {
             studentEmail = extra.getString("studentEmail").toLowerCase();
             teacherEmail = extra.getString("teacherEmail").toLowerCase();
+            studentName = extra.getString("studentName");
         }
 
-        chatMessages = new ArrayList<>();
-        chatAdapter = new ChatAdapter(chatMessages, studentEmail );
-        database = FirebaseFirestore.getInstance();
-        binding.chatContent.setAdapter(chatAdapter);
+        binding.holdChat.setOnClickListener(v->{
+            updateConversion(true);
+        });
+
+        binding.unHoldBtn.setOnClickListener(v->{
+            updateConversion(false);
+        });
+
+
+    }
+
+
+        private void updateConversion(Boolean value) {
+            DocumentReference documentReference = database.collection(Constants.KEY_COLLECTIONS_CONVERSATION).document(""+studentEmail+" - "+teacherEmail);
+            documentReference.update("hold", value).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Toast.makeText(WatchChatActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                }
+            });
     }
 
     private void loadRecieverDetails() {
-        binding.chatScreenTeacherName.setText(studentEmail);
-        binding.chatTeacherSubjectName.setText(teacherEmail);
+        binding.chatScreenTeacherName.setText(studentName);
+        binding.chatTeacherSubjectName.setVisibility(View.GONE);
     }
 
     private String getReadableDateTime(Date date) {
@@ -96,8 +123,6 @@ public class WatchChatActivity extends AppCompatActivity {
                     chatMessage.time = getReadableDateTime(documentChange.getDocument().getDate(Constants.KEY_TIME_STAMP));
                     chatMessage.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIME_STAMP);
                     chatMessages.add(chatMessage);
-
-
                 }
             }
             Collections.sort(chatMessages, (obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));

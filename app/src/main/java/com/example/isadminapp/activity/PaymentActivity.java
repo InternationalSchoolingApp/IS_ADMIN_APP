@@ -152,6 +152,7 @@ public class PaymentActivity extends AppCompatActivity {
                     PaymentAdapter paymentAdapter = new PaymentAdapter(payment);
                     binding.recyclerViewPayment.setVisibility(View.VISIBLE);
                     binding.recyclerViewPayment.setAdapter(paymentAdapter);
+                    Toast.makeText(PaymentActivity.this, payment.size()+" : record found", Toast.LENGTH_SHORT).show();
                     Log.d("Response", "onResponse: "+ response.body().getAdvancePaymentSearchResponseDTO().toString());
                 } else {
                     Toast.makeText(PaymentActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();

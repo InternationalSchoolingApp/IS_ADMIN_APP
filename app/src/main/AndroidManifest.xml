@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ChatResultActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_chat_result"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
             android:name=".activity.ChatTeacherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"

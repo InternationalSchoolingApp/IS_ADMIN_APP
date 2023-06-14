@@ -30,6 +30,8 @@ public class SearchTeacher extends AppCompatActivity {
         binding = ActivitySearchTeacherBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.btnAdvanceSearch.setOnClickListener(v->onBackPressed());
+
         binding.btnAdvanceSearch.setOnClickListener(v->{
 
             String name = binding.emailSearch.getText().toString();

@@ -33,12 +33,7 @@
             android:textColor="@color/dash_gif_blue"
             android:textSize="20sp" />
 
-
-
-
     </RelativeLayout>
-
-
 
     <TextView
         android:padding="10dp"
@@ -63,10 +58,24 @@
         android:id="@+id/activity_button"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Activities"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:fontFamily="@font/rubik_bold"
+        />
 
-
-
-
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/login_background"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/recyclerViewLelo"/>
 
 </LinearLayout>

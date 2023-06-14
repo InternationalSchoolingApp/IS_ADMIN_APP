@@ -3,8 +3,6 @@ package com.example.isadminapp.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class AdminProfileViewModel {
 
     @SerializedName("standard")
@@ -16,7 +14,6 @@ public class AdminProfileViewModel {
     @SerializedName("image")
     @Expose
     private String image;
-
 
     public AdminProfileViewModel(String userId) {
         this.userId = userId;

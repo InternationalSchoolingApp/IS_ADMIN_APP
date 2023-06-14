@@ -2,15 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".activity.ChatSearchActivity">
-
+    android:background="@color/white"
+    android:theme="@style/ThemeOverlay.ISADMINAPP.FullscreenContainer"
+    tools:context=".activity.ChatResultActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:padding="15dp">
 
         <ImageView
             android:layout_width="30dp"
@@ -25,47 +26,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:includeFontPadding="false"
-            android:text="Teacher Search"
+            android:text="Chat Results"
             android:textColor="@color/dash_gif_blue"
             android:textSize="20sp" />
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="20dp"
-        android:background="@drawable/curve_corner_less"
-        android:backgroundTint="@color/is_dark_blue"
-        >
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Teacher name"
-            android:background="@drawable/curve_corner_less"
-            android:backgroundTint="@color/white"
-            android:padding="12dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:fontFamily="@font/rubik"
-            android:id="@+id/name_search"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check"
-            android:background="@drawable/curve_corner_less"
-            android:backgroundTint="@color/white"
-            android:layout_below="@+id/name_search"
-            android:layout_marginTop="5dp"
-            android:id="@+id/btn_advance_search"
-            android:alpha="0.8"/>
 
 
     </RelativeLayout>
@@ -79,5 +42,4 @@
         android:overScrollMode="never"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:id="@+id/chat_recycler_view"/>
-
 </LinearLayout>

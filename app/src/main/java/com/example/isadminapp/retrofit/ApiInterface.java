@@ -2,6 +2,7 @@ package com.example.isadminapp.retrofit;
 
 import com.example.isadminapp.model.ActivateChatModel;
 import com.example.isadminapp.model.AddPaymentStudentSearchModel;
+import com.example.isadminapp.model.AdminChatActivationLog;
 import com.example.isadminapp.model.AdminProfileModel;
 import com.example.isadminapp.model.AdminProfileViewModel;
 import com.example.isadminapp.model.ChatStatusCheck;
@@ -28,7 +29,7 @@ public interface ApiInterface {
 
     @POST("login-platform-admin")
     Call<LoginModel> loginPostData(@Body LoginModel loginModel);
-//
+
     @POST("device-token")
     Call<FirebaseTokenModel> firebaseToken(@Body FirebaseTokenModel firebaseTokenModel);
 
@@ -97,6 +98,9 @@ public interface ApiInterface {
 
     @POST("student-available-for-chat")
     Call<StudentAvailablityForChatModel> getStudentsForChat(@Body StudentAvailablityForChatModel studentAvailablityForChatModel);
+
+    @POST("admin-chat-activation-log")
+    Call<AdminChatActivationLog> getAdminChatLog(@Body AdminChatActivationLog adminChatActivationLog);
 
 
 }

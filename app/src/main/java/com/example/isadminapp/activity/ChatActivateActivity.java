@@ -1,21 +1,25 @@
 package com.example.isadminapp.activity;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.isadminapp.adapter.ChatLogAdapter;
 import com.example.isadminapp.constant.Constants;
 import com.example.isadminapp.databinding.ActivityChatActivateBinding;
 import com.example.isadminapp.model.ActivateChatModel;
+import com.example.isadminapp.model.AdminChatActivationLog;
 import com.example.isadminapp.model.ChatStatusCheck;
 import com.example.isadminapp.preference.PreferenceManager;
 import com.example.isadminapp.retrofit.ApiInterface;
 import com.example.isadminapp.retrofit.RetroFitClient;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,6 +29,8 @@ import retrofit2.Response;
 public class ChatActivateActivity extends AppCompatActivity {
 
     private ActivityChatActivateBinding binding;
+
+    private List<AdminChatActivationLog> list ;
 
     Integer status ;
 
@@ -49,12 +55,34 @@ public class ChatActivateActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading");
         progressDialog.setCancelable(false);
         binding.recentTeacherBackButton.setOnClickListener(v->onBackPressed());
-
         userId = preferenceManager.getInt(Constants.USER_ID);
-
         ApiInterface apiInterface = RetroFitClient.getRetrofit().create(ApiInterface.class);
+        AdminChatActivationLog adminChatActivationLog = new AdminChatActivationLog(userId);
+        Call<AdminChatActivationLog> call1 = apiInterface.getAdminChatLog(adminChatActivationLog);
+        call1.enqueue(new Callback<AdminChatActivationLog>() {
+            @Override
+            public void onResponse(Call<AdminChatActivationLog> call, Response<AdminChatActivationLog> response) {
+                if (response.body().getStatus().equals("success")){
+                    binding.recyclerViewLelo.setVisibility(View.VISIBLE);
+                    List<AdminChatActivationLog.Data> list = response.body().getData();
+                    ChatLogAdapter chatLogAdapter = new ChatLogAdapter(list);
+                    binding.recyclerViewLelo.setAdapter(chatLogAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AdminChatActivationLog> call, Throwable t) {
+
+            }
+        });
+
+
+
+
+
         ChatStatusCheck chatStatusCheck = new ChatStatusCheck(userId);
         Call<ChatStatusCheck> call = apiInterface.chatStatusCheck(chatStatusCheck);
+
         call.enqueue(new Callback<ChatStatusCheck>() {
             @Override
             public void onResponse(Call<ChatStatusCheck> call, Response<ChatStatusCheck> response) {

@@ -17,5 +17,6 @@
     <string name="title_activity_search_student_for_chat">SearchStudentForChatActivity</string>
     <string name="title_activity_chat_student">ChatStudentActivity</string>
     <string name="title_activity_chat_teacher">ChatTeacherActivity</string>
+    <string name="title_activity_chat_result">ChatResultActivity</string>
 
 </resources>
