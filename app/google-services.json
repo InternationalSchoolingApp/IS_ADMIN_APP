@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:718684029735:android:b212f88e8382fae4ae1f02",
-        "android_client_info": {
-          "package_name": "com.example.isadminapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "718684029735-75ncerr32ucoj2k98i5f7s0f5senj3j9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA9ZiCK6qobgT_FxIHSOj3KM92CZDxTqnE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "718684029735-75ncerr32ucoj2k98i5f7s0f5senj3j9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:718684029735:android:bb9ea2d2eccb21c8ae1f02",
         "android_client_info": {
           "package_name": "com.isApp.teacher"
@@ -69,6 +40,35 @@
         "mobilesdk_app_id": "1:718684029735:android:e7bf56f5f3a76f8eae1f02",
         "android_client_info": {
           "package_name": "com.isapp.isstudentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718684029735-75ncerr32ucoj2k98i5f7s0f5senj3j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ZiCK6qobgT_FxIHSOj3KM92CZDxTqnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718684029735-75ncerr32ucoj2k98i5f7s0f5senj3j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718684029735:android:4f7defe7375cd0bbae1f02",
+        "android_client_info": {
+          "package_name": "org.is.isadminapp"
         }
       },
       "oauth_client": [
