@@ -45,7 +45,6 @@ public class LoginModel {
     private int userId;
 
 
-
     public LoginModel(String username, String pass, String deviceInfo, Integer schoolId) {
         this.username = username;
         this.pass = pass;
