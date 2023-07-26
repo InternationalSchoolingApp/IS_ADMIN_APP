@@ -47,7 +47,7 @@ public class RecentConversationStudentAdapter extends RecyclerView.Adapter<Recen
         }
 
         void setData(ChatMessage chatMessage) {
-            binding.recentTeacherNameChat.setText(chatMessage.conversionName);
+            binding.recentTeacherNameChat.setText(chatMessage.studentEmail);
             binding.teacherRecentMessage.setText(chatMessage.message);
             binding.timeRecentMessage.setText(chatMessage.dateObject.toString());
             String studentId = chatMessage.studentId;

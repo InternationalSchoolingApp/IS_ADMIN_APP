@@ -138,6 +138,8 @@ public class ChatTeacherActivity extends AppCompatActivity {
         HashMap<String, Object> message = new HashMap<>();
         message.put("senderId", senderId);
         message.put("receiverId", recieverEmail);
+        message.put("teacherEmail", recieverEmail);
+        message.put("adminEmail", senderId);
         message.put("message", binding.chatEdittext.getText().toString());
         message.put("timeStamp", new Date());
         message.put("type", "ADMIN_TEACHER");
