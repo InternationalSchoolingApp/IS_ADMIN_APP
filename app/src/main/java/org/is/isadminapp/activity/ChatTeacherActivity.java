@@ -279,6 +279,7 @@ public class ChatTeacherActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
 
                 if (response.isSuccessful()) {
+
                     try {
                         if (response.body() != null) {
                             JSONObject responseJson = new JSONObject(response.body());

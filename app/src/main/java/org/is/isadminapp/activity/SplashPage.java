@@ -2,6 +2,7 @@ package org.is.isadminapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,9 +19,23 @@ public class SplashPage extends AppCompatActivity {
 
     private ActivitySplashPageBinding binding;
 
+
+    private int SPLASH_TIME = 3000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        boolean areNotificationsEnabled = notificationManager.areNotificationsEnabled();
+        if (!areNotificationsEnabled) {
+            SPLASH_TIME = 15000;
+            Intent intent = new Intent();
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+            startActivity(intent);
+            finish();
+        }
 
         binding = ActivitySplashPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -46,7 +61,7 @@ public class SplashPage extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 3000);
+        }, SPLASH_TIME);
 
 
 

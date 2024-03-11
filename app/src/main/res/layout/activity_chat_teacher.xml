@@ -63,9 +63,6 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_margin="15dp"
-        app:tint="@color/black"
-        android:src="@drawable/ic_baseline_info_24"
-        android:tint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />

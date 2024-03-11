@@ -50,6 +50,7 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentV
         holder.paymentStatus.setText(""+list.get(position).getPaymentStatus());
         holder.paymentDetailId.setText(""+list.get(position).getUserPaymentDetailsId());
         holder.studentEmail.setText(""+list.get(position).getStudentEmail());
+        holder.studentEmail.setVisibility(View.GONE);
         holder.learningProgram.setText(""+list.get(position).getRegistrationType());
         holder.planName.setText(""+list.get(position).getPlanName());
         holder.paymentTitle.setText(""+list.get(position).getPaymentTitle());

@@ -5,15 +5,13 @@ plugins {
 
 android {
     namespace 'org.is.isadminapp'
-    compileSdk 33
+    compileSdk 33 // Update to the required version
 
     defaultConfig {
         applicationId "org.is.isadminapp"
-        minSdk 31
-        targetSdk 33
+        minSdk 28
         versionCode 4
         versionName "1.3"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

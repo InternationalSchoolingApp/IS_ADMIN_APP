@@ -39,6 +39,9 @@ public class ChatTeacherSearchAdapter extends RecyclerView.Adapter<ChatTeacherSe
         holder.name.setText(""+list.get(position).getUserName());
         //holder.grade.setText(""+list.get(position).getEmailId());
         holder.email.setText(""+list.get(position).getEmailId());
+        holder.email.setVisibility(View.GONE);
+
+        holder.email.setVisibility(View.GONE);
         int id = list.get(position).getId();
         String name = list.get(position).getUserName();
         String email = list.get(position).getEmailId();

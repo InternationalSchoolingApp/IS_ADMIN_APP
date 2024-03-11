@@ -42,6 +42,7 @@ public class StudentSearchChatAdapter extends RecyclerView.Adapter<StudentSearch
         holder.name.setText(""+list.get(position).getUserName());
         holder.grade.setText(""+list.get(position).getGrade().replace("-", " "));
         holder.email.setText(""+list.get(position).getEmailId());
+        holder.email.setVisibility(View.GONE);
         Integer id = list.get(position).getId();
         String name = list.get(position).getUserName();
         String email = list.get(position).getEmailId();

@@ -40,6 +40,7 @@ public class ManageUserSearchAdapter extends RecyclerView.Adapter<ManageUserSear
         holder.name.setText(""+list.get(position).getUserFullName());
         holder.userRole.setText(""+list.get(position).getParentUserRole());
         holder.email.setText(""+list.get(position).getEmail());
+        holder.email.setVisibility(View.GONE);
 
         String userId = String.valueOf(list.get(position).getId());
 
