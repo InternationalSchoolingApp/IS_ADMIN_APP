@@ -25,12 +25,23 @@
             android:src="@drawable/whitelogo" />
 
         <ImageView
-            android:id="@+id/notification_bell"
+            android:id="@+id/mail"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:layout_marginRight="20sp"
+            android:src="@drawable/email"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/notification_bell"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignRight="@+id/mail"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="80dp"
             android:clickable="true"
             android:src="@drawable/bell"/>
 
@@ -43,7 +54,6 @@
         android:id="@+id/fragment_container"
         android:background="@color/dash_gif_blue"
         android:layout_above="@+id/relative_bottom_layout">
-
 
 
     </RelativeLayout>

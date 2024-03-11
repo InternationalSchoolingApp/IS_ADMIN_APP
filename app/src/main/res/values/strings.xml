@@ -19,5 +19,6 @@
     <string name="title_activity_chat_teacher">ChatTeacherActivity</string>
     <string name="title_activity_chat_result">ChatResultActivity</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="title_activity_mail_view_notification">MailViewNotification</string>
 
 </resources>

@@ -47,6 +47,14 @@ public class DashboardActivity extends AppCompatActivity {
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this , MailViewNotification.class);
+                startActivity(i);
+            }
+        });
+
         binding.notificationBell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
