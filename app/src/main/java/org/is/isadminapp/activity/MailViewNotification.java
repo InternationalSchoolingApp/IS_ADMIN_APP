@@ -57,7 +57,7 @@ public class MailViewNotification extends AppCompatActivity {
         Query query = database.collection("NOTIFICATIONS")
                 .where(Filter.or(
                         Filter.equalTo("for", "ADMIN"),
-                        Filter.arrayContains("userId", preferenceManager.getInt(Constants.USER_ID))
+                        Filter.arrayContains("userIds", preferenceManager.getString(Constants.USER_EMAIL).toLowerCase())
                 ))
                 .orderBy("timeStamp", Query.Direction.DESCENDING);
 
@@ -77,9 +77,10 @@ public class MailViewNotification extends AppCompatActivity {
                 for (DocumentSnapshot document : value.getDocuments()) {
                     String subtitle = document.getString("subtitle");
                     String title = document.getString("title");
-                    Date timestamp = document.getDate("timeStamp");
+                    Date timestamp = document.getDate("timeStamp") != null ? document.getDate("timeStamp") : new Date();
                     String body = document.getString("body");
                     Log.d("TAG", "listenNotifications: "+ title + subtitle + timestamp);
+
                     NotificationModel notification = new NotificationModel(title, subtitle, timestamp.toString(), body );
                     notificationList.add(notification);
                 }
