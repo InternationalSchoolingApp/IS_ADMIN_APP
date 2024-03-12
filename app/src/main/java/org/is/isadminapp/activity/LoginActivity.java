@@ -152,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                     preferenceManager.putString(Constants.ROLE, role);
 
                     saveTokenFireBase(userIdOnResponse);
-                    registerInFirebase(email, name, userIdOnResponse);
+                    registerInFirebase(email, name, userIdOnResponse, role);
                     Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                     startActivity(intent);
                 } else {
@@ -169,22 +169,22 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void registerInFirebase(String usermail, String name, Integer userId) {
+    private void registerInFirebase(String usermail, String name, Integer userId, String role) {
         String mail = usermail.toLowerCase();
-        if (!firebaseCheck(mail)) {
+        //if (!firebaseCheck(mail)) {
             CollectionReference user = database.collection(Constants.FIREBASE_USER_DB);
             HashMap<String, Object> data = new HashMap<>();
             data.put(Constants.NAME, name);
             data.put(Constants.USER_EMAIL, mail);
             data.put(Constants.USER_ID, userId);
-            data.put(Constants.ROLE, Constants.ADMIN_ROLE);
+            data.put(Constants.ROLE, role);
             data.put(Constants.FIREBASE_TOKEN, preferenceManager.getString(Constants.FIREBASE_TOKEN));
             user.document(mail).set(data).addOnSuccessListener(d -> {
 
             }).addOnFailureListener(exception -> {
 
             });
-        }
+        //}
 
     }
 
