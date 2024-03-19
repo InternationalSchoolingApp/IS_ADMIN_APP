@@ -20,7 +20,9 @@ import org.is.isadminapp.model.StudentAvailablityForChatModel;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -34,6 +36,9 @@ public interface ApiInterface {
 
     @POST("login-platform-admin")
     Call<LoginModel> loginPostData(@Body LoginModel loginModel);
+
+    @GET("get-current-time-zone-user")
+    Call<String> getCurrentTimeZone(@Query("userId") int userId);
 
     @POST("device-token")
     Call<FirebaseTokenModel> firebaseToken(@Body FirebaseTokenModel firebaseTokenModel);

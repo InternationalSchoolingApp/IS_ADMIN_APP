@@ -21,6 +21,11 @@ import org.is.isadminapp.constant.Constants;
 import org.is.isadminapp.model.User;
 import org.is.isadminapp.preference.PreferenceManager;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -30,16 +35,33 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     PreferenceManager preferenceManager;
 
+    FirebaseFirestore firebaseFirestore;
+
+
+    private void updateFireBaseToken(String token) {
+
+        if (token != null && !token.equals("")) {
+            preferenceManager.putString(Constants.FIREBASE_TOKEN, token);
+            DocumentReference docRef = firebaseFirestore.collection(Constants.FIREBASE_USER_DB).document(token);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    docRef.update("firebaseToken", preferenceManager.getString(Constants.FIREBASE_TOKEN));
+                }
+            });
+        }
+    }
+
     @Override
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
-        if (token != null) {
-            preferenceManager = new PreferenceManager(getApplicationContext());
-            preferenceManager.putString(Constants.FIREBASE_TOKEN, token);
-            Log.d("TOKEN", "onNewToken: " + token);
-        }
-
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        preferenceManager = new PreferenceManager(getApplicationContext());
+        updateFireBaseToken(token);
     }
+
+
+
 
 
     @Override

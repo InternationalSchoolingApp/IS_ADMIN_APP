@@ -41,8 +41,7 @@ public class More extends Fragment {
             public void onClick(View view) {
 
                 int userId = preferenceManager.getInt(Constants.USER_ID);
-                System.out.println(userId);
-                Log.d("TAG", "onClick: "+userId);
+
                 String usermail = preferenceManager.getString(Constants.USER_EMAIL);
                 firebaseToken = preferenceManager.getString(Constants.FIREBASE_TOKEN);
                 int platformId = preferenceManager.getInt(Constants.PLATFORM_ID);

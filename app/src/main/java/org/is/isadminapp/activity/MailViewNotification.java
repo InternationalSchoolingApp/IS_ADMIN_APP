@@ -43,18 +43,12 @@ public class MailViewNotification extends AppCompatActivity {
             onBackPressed();
         });
         listenNotifications();
-
-
-
-
-
-
     }
 
     private void listenNotifications(){
 
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-        Query query = database.collection("NOTIFICATIONS")
+        Query query = database.collection(Constants.NOTIFICATIONS)
                 .where(Filter.or(
                         Filter.equalTo("for", "ADMIN"),
                         Filter.arrayContains("userIds", preferenceManager.getString(Constants.USER_EMAIL).toLowerCase())
@@ -79,9 +73,10 @@ public class MailViewNotification extends AppCompatActivity {
                     String title = document.getString("title");
                     Date timestamp = document.getDate("timeStamp") != null ? document.getDate("timeStamp") : new Date();
                     String body = document.getString("body");
+                    String notificationId = document.getString("notificationId");
                     Log.d("TAG", "listenNotifications: "+ title + subtitle + timestamp);
 
-                    NotificationModel notification = new NotificationModel(title, subtitle, timestamp.toString(), body );
+                    NotificationModel notification = new NotificationModel(title, subtitle, timestamp.toString(), body , notificationId);
                     notificationList.add(notification);
                 }
                 EmailAdapter notificationAdapter = new EmailAdapter(notificationList);

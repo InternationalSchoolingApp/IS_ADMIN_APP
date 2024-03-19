@@ -3,7 +3,11 @@ package org.is.isadminapp.constant;
 import java.util.HashMap;
 
 public class Constants {
+
     public static final String USER_ID = "userId";
+
+    public static final String TIMEZONE = "timeZone";
+    public static final String NOTIFICATIONS = "NOTIFICATIONS";
     public static final String ROLE = "roleType";
     public static final String STUDENT_ROLE = "STUDENT";
     public static final String TEACHER_ROLE = "TEACHER";

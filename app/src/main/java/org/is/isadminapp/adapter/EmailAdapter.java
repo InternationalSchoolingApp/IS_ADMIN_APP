@@ -39,7 +39,8 @@ public class EmailAdapter extends RecyclerView.Adapter<EmailAdapter.EmailViewHol
         String title = list.get(position).getTitle();
         String message = list.get(position).getSubtitle();
         String time = list.get(position).getTimestamp();
-        String body = list.get(position).getNotificationId();
+        String body = list.get(position).getBody();
+        String notificationId = list.get(position).getNotificationId();
 
         holder.title.setText(title);
         holder.message.setText(message);
@@ -52,6 +53,7 @@ public class EmailAdapter extends RecyclerView.Adapter<EmailAdapter.EmailViewHol
                 intent.putExtra("subtitle", message);
                 intent.putExtra("time", time);
                 intent.putExtra("body", body);
+                intent.putExtra("notificationId", notificationId);
                 v.getContext().startActivity(intent);
             }
         });
